@@ -45,7 +45,7 @@ class _HomeViewState extends State<HomeView> {
           : (MediaQuery.of(context).size.width * 0.5 + supWidth);
 
   double getLogoSize(BuildContext context, {double supWidth = 0.0}) =>
-      !ResponsiveBreakpoints.of(context).largerThan("MOBILE_LARGE") ? 130 : 120;
+      !ResponsiveBreakpoints.of(context).largerThan("MOBILE_LARGE") ? 150 : 130;
 
   double getCardHeight(BuildContext context) =>
       !ResponsiveBreakpoints.of(context).largerThan("MOBILE_LARGE") ? 300 : 400;
