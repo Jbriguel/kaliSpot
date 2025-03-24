@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:kalispot/screens/auth/complete_profil_view.dart';
 import 'package:kalispot/screens/auth/login_view.dart';
 import 'package:kalispot/screens/home/home_view.dart';
@@ -15,7 +16,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Kalispot',
+      supportedLocales: const [
+        Locale('fr', 'FR'), // Ajoute la localisation française
+      ],
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      locale: const Locale('fr', 'FR'), // Définit la langue par défaut
+
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.

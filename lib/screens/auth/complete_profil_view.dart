@@ -1,7 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:kalispot/components/default_btn.dart';
+import 'package:kalispot/functions/openCalendar.dart';
 import 'package:kalispot/screens/auth/components/filled_rounded_pin_put.dart';
 import 'package:kalispot/theme/colors/appColors.dart';
 import 'package:kalispot/theme/images/appImages.dart';
@@ -208,22 +210,37 @@ class _CompleteProfilViewState extends State<CompleteProfilView> {
                                   ),
                                   const SizedBox(height: 15),
                                   resizeMe(
-                                    CustomTextFormField(
-                                      suffix: const Icon(
-                                        Icons.calendar_month_outlined,
-                                        color: AppColors.easyGreen,
+                                    GestureDetector(
+                                      onTap: () async {
+                                        DateTime? dateTime = await openCalendar(
+                                            context,
+                                            helpText:
+                                                'Choisir date de fin de prise');
+                                        if (dateTime != null) {
+                                          birthController.value =
+                                              TextEditingValue(
+                                            text: DateFormat('dd-MM-yyyy')
+                                                .format(dateTime),
+                                          );
+                                        }
+                                      },
+                                      child: CustomTextFormField(
+                                        suffix: const Icon(
+                                          Icons.calendar_month_outlined,
+                                          color: AppColors.easyGreen,
+                                        ),
+                                        enable: false,
+                                        controller: birthController,
+                                        hintText: "Date de naissance",
+                                        textInputAction: TextInputAction.done,
+                                        textInputType: TextInputType.text,
+                                        autofocus: false,
+                                        fillColor: ResponsiveBreakpoints.of(
+                                                    context)
+                                                .largerThan("MOBILE_LARGE")
+                                            ? Colors.white10.withOpacity(0.1)
+                                            : Colors.black12.withOpacity(0.19),
                                       ),
-                                      controller: birthController,
-                                      hintText: "Date de naissance",
-                                      textInputAction: TextInputAction.done,
-                                      textInputType: TextInputType.text,
-                                      autofocus: false,
-                                      fillColor:
-                                          ResponsiveBreakpoints.of(context)
-                                                  .largerThan("MOBILE_LARGE")
-                                              ? Colors.white10.withOpacity(0.1)
-                                              : Colors.black12
-                                                  .withOpacity(0.19),
                                     ),
                                   ),
                                   const SizedBox(height: 15),
