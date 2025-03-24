@@ -159,12 +159,7 @@
   </script>
   <script src="./flutter_bootstrap.js" defer></script>
   <script defer>
-    window.addEventListener("load", function (ev) {
-      // Récupère les paramètres d'initialisation de l'application Telegram
-       const startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
-
-      // Utilisez startParam pour gérer la logique de parrainage ou autre
-       console.log("Paramètre de démarrage :", startParam);
+    window.addEventListener("load", function (ev) { 
       // Download main.dart.js
       _flutter.loader.load({
         serviceWorker: {
