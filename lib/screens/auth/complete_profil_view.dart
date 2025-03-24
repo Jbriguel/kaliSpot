@@ -10,6 +10,7 @@ import 'package:kalispot/widgets/inputField.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+import '../home/home_view.dart';
 import 'components/input_withCountry.dart';
 
 class CompleteProfilView extends StatefulWidget {
@@ -227,7 +228,15 @@ class _CompleteProfilViewState extends State<CompleteProfilView> {
                                   const SizedBox(height: 15),
                                   resizeMe(DefaultButton(
                                     text: "SUIVANT",
-                                    press: () {},
+                                    press: () {
+                                      Navigator.push<void>(
+                                        context,
+                                        MaterialPageRoute<void>(
+                                          builder: (BuildContext context) =>
+                                              const HomeView(),
+                                        ),
+                                      );
+                                    },
                                     textColor: AppColors.deepGreen,
                                     backColor: AppColors.easyGreen,
                                   )),

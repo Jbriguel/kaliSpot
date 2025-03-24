@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kalispot/components/default_btn.dart';
+import 'package:kalispot/screens/auth/complete_profil_view.dart';
 import 'package:kalispot/screens/auth/components/filled_rounded_pin_put.dart';
 import 'package:kalispot/theme/colors/appColors.dart';
 import 'package:kalispot/theme/images/appImages.dart';
@@ -124,7 +125,7 @@ class _OtpViewState extends State<OtpView> {
                               context,
                               MaterialPageRoute<void>(
                                 builder: (BuildContext context) =>
-                                    const OtpView(),
+                                    const CompleteProfilView(),
                               ),
                             );
                           },
