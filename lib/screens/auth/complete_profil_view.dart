@@ -214,7 +214,7 @@ class _CompleteProfilViewState extends State<CompleteProfilView> {
                                         DateTime? dateTime = await openCalendar(
                                             context,
                                             helpText:
-                                                'Choisir date de fin de prise');
+                                                'Choisissez une date');
                                         if (dateTime != null) {
                                           birthController.value =
                                               TextEditingValue(
