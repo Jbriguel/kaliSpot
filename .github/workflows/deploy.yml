@@ -30,6 +30,9 @@ on:
     branches:
       - main  # Ou la branche sur laquelle tu veux effectuer le déploiement
 
+permissions:
+  contents: write  # Permet au bot de faire un push
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
