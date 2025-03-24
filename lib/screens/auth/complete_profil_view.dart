@@ -119,8 +119,7 @@ class _CompleteProfilViewState extends State<CompleteProfilView> {
                                 color: ResponsiveBreakpoints.of(context)
                                         .largerThan("MOBILE_LARGE")
                                     ? Colors.black45
-                                    : Colors
-                                        .black45, //AppColors.easyGreen.withOpacity(0.5),
+                                    :  AppColors.easyGreen.withOpacity(0.2),
                                 borderRadius: BorderRadius.circular(10)),
                             padding: const EdgeInsets.all(10),
                             child: Column(
