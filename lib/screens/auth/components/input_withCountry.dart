@@ -44,7 +44,7 @@ class _InputWithcountryState extends State<InputWithcountry> {
           ),
           margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
           child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 // Sélection du pays (indicatif téléphonique)
                 CountryListPick(
