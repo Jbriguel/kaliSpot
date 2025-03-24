@@ -171,7 +171,7 @@ class _HomeViewState extends State<HomeView> {
                                       shape: BoxShape.circle,
                                       color: Colors.black38),
                                   child: CustomImageView(
-                                    imagePath: AppImages.bulb,
+                                    imagePath: AppImages.circleLogo,
                                     fit: BoxFit.contain,
                                     height: 30,
                                     width: 30,
@@ -240,7 +240,7 @@ class _HomeViewState extends State<HomeView> {
                                     ),
                                   ),
                                   CustomImageView(
-                                    imagePath: AppImages.circleLogo,
+                                    imagePath: AppImages.bulb,
                                     fit: BoxFit.contain,
                                     height: getLogoSize(context),
                                     width: getLogoSize(context),
