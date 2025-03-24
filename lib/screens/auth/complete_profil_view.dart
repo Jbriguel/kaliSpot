@@ -117,7 +117,8 @@ class _CompleteProfilViewState extends State<CompleteProfilView> {
                                 color: ResponsiveBreakpoints.of(context)
                                         .largerThan("MOBILE_LARGE")
                                     ? Colors.black45
-                                    : AppColors.easyGreen.withOpacity(0.5),
+                                    : Colors
+                                        .black45, //AppColors.easyGreen.withOpacity(0.5),
                                 borderRadius: BorderRadius.circular(10)),
                             padding: const EdgeInsets.all(10),
                             child: Column(
@@ -142,7 +143,7 @@ class _CompleteProfilViewState extends State<CompleteProfilView> {
                                   //   ),
                                   // ),
                                   _buildIntroText(),
-                                  _buildSubText(),
+                                  // _buildSubText(),
                                   const SizedBox(height: 15),
                                   resizeMe(
                                     CustomTextFormField(
@@ -259,7 +260,7 @@ class _CompleteProfilViewState extends State<CompleteProfilView> {
       return SizedBox(
           width: ResponsiveBreakpoints.of(context).largerThan("MOBILE_LARGE")
               ? constraints.maxWidth * 0.8
-              : constraints.maxWidth * 0.9,
+              : constraints.maxWidth * 0.95,
           child: child);
     });
   }

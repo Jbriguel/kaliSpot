@@ -50,30 +50,30 @@ class _InputWithcountryState extends State<InputWithcountry> {
                 CountryListPick(
                   pickerBuilder: (context, CountryCode? countryCode) {
                     return Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(countryCode?.dialCode ?? '',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodySmall!
-                                .copyWith(
-                                    fontFamily: "Aller", color: Colors.black)),
-                        const SizedBox(width: 5),
-                        Icon(
-                          Icons.arrow_drop_down,
-                          color: AppColors.easyGreen,
-                        ),
-                        Center(
-                          child: Container(
-                            padding: EdgeInsets.all(2),
-                            width: 1,
-                            height: 30,
-                            decoration:
-                                BoxDecoration(color: Colors.grey.shade600),
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(countryCode?.dialCode ?? '',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall!
+                                  .copyWith(
+                                      fontFamily: "Aller",
+                                      color: Colors.black)),
+                          const SizedBox(width: 5),
+                          Icon(
+                            Icons.arrow_drop_down,
+                            color: AppColors.easyGreen,
                           ),
-                        ),
-                      ],
-                    );
+                          Center(
+                            child: Container(
+                              padding: EdgeInsets.all(2),
+                              width: 1,
+                              height: 30,
+                              decoration:
+                                  BoxDecoration(color: Colors.grey.shade600),
+                            ),
+                          ),
+                        ]);
                   },
                   initialSelection: widget.countryDialCodeController.text,
                   onChanged: isForMe

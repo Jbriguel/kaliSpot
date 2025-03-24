@@ -26,7 +26,7 @@ class _OtpViewState extends State<OtpView> {
 
   double getCardSize(BuildContext context, {double supWidth = 0.0}) =>
       !ResponsiveBreakpoints.of(context).largerThan("MOBILE_LARGE")
-          ? MediaQuery.of(context).size.width * 0.9
+          ? MediaQuery.of(context).size.width * 0.95
           : (MediaQuery.of(context).size.width * 0.4 + supWidth);
 
   double getBtnWidth(BuildContext context, {double supWidth = 0.0}) =>
