@@ -54,9 +54,10 @@ jobs:
       - name: Build Flutter Web
         run: flutter build web
 
-      # Étape 5: Déplacer les fichiers construits dans le dossier 'docs'
+      # Étape 5: Créer le dossier 'docs' s'il n'existe pas et déplacer les fichiers
       - name: Move build files to docs folder
         run: |
+          mkdir -p docs  # Créer le dossier docs s'il n'existe pas
           rm -rf docs/*  # Supprimer les anciens fichiers dans le dossier docs
           mv build/web/* docs/  # Déplacer les nouveaux fichiers dans docs
 
