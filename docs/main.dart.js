@@ -90457,8 +90457,8 @@ if(!g.w)B.b.F(q,A.a([new A.Dk(i),new A.Ke(new A.auK(g),i)],d))
 else{p=A.ed(20)
 p=A.bS(i,A.ce("Kadija",i,i,i,i,i,i,i,A.J(a).p2.Q.ou(B.bh,h,B.bM),i,i,i),B.o,i,i,new A.bK(B.aA,i,i,p,i,i,i,B.ab),i,i,B.aP,B.P_,i,i,i)
 o=A.h5(A.a([B.Qa,B.Gz,A.ce("Online",i,i,i,i,i,i,i,A.J(a).p2.ax.ot(B.J,h),i,i,i)],d),B.O,B.bv,B.bw)
-n=!A.e6(a).eO(j)?130:120
-n=A.tu(B.dY,n,"assets/images/bulbe.png",B.aP,!A.e6(a).eO(j)?130:120)
+n=!A.e6(a).eO(j)?150:130
+n=A.tu(B.dY,n,"assets/images/bulbe.png",B.aP,!A.e6(a).eO(j)?150:130)
 m=A.ce("Hi Sa\xefdou, \n How can i help you Today ?",i,i,i,i,i,i,i,A.J(a).p2.z.ou(B.k,h,B.bM),B.bd,i,i)
 r=!A.e6(a).eO(j)?A.aP(a,i,r).w.a.a*0.9:A.aP(a,i,r).w.a.a*0.6+0
 l=A.ey(i,A.bS(i,B.Ql,B.o,i,i,B.IV,i,i,B.bj,B.e7,i,i,i),B.P,!1,i,i,i,i,i,i,i,i,i,i,i,i,new A.auL(g),i,i,i,i,i)
