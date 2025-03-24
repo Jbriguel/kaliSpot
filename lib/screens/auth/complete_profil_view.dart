@@ -233,7 +233,7 @@ class _CompleteProfilViewState extends State<CompleteProfilView> {
                                         context,
                                         MaterialPageRoute<void>(
                                           builder: (BuildContext context) =>
-                                              const HomeView(),
+                                              HomeView(),
                                         ),
                                       );
                                     },
