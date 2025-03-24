@@ -1,24 +1,75 @@
+# name: Deploy Flutter Web to GitHub Pages
+
+# on:
+#   push:
+#     branches:
+#       - main  # ou la branche que tu veux utiliser
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: subosito/flutter-action@v2
+#         with:
+#           flutter-version: '3.24.5'  # Vérifie la dernière version stable
+#           channel: stable
+#       - run: flutter config --enable-web
+#       - run: flutter build web
+#       - run: |
+#           git config --global user.name "Jbriguel"
+#           git config --global user.email "dossouyovojoseph04@gmail.com"
+#           git add -f build/web
+#           git commit -m "Deploy Flutter Web App"
+#           git push origin `git subtree split --prefix build/web main`:gh-pages --force
+
 name: Deploy Flutter Web to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # ou la branche que tu veux utiliser
+      - main  # Ou la branche sur laquelle tu veux effectuer le déploiement
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
+      # Étape 1: Vérifie le code depuis ton dépôt
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Étape 2: Installer Flutter
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.5'  # Vérifie la dernière version stable
           channel: stable
-      - run: flutter config --enable-web
-      - run: flutter build web
-      - run: |
+
+      # Étape 3: Installer les dépendances Flutter
+      - name: Install dependencies
+        run: flutter pub get
+
+      # Étape 4: Construire l'application Flutter pour le web
+      - name: Build Flutter Web
+        run: flutter build web
+
+      # Étape 5: Créer le dossier 'docs' s'il n'existe pas et déplacer les fichiers
+      - name: Move build files to docs folder
+        run: |
+          mkdir -p docs  # Créer le dossier docs s'il n'existe pas
+          rm -rf docs/*  # Supprimer les anciens fichiers dans le dossier docs
+          mv build/web/* docs/  # Déplacer les nouveaux fichiers dans docs
+
+      # Étape 6: Configurer Git pour le déploiement
+      - name: Configure Git for deployment
+        run: |
           git config --global user.name "Jbriguel"
           git config --global user.email "dossouyovojoseph04@gmail.com"
-          git add -f build/web
-          git commit -m "Deploy Flutter Web App"
-          git push origin `git subtree split --prefix build/web main`:gh-pages --force
+      
+      # Étape 7: Ajouter les fichiers et faire un commit
+      - name: Commit and Push to GitHub Pages
+        run: |
+          git add docs/*
+          git commit -m "Déploiement automatique de l'application Flutter Web"
+          git push origin main
