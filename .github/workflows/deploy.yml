@@ -30,6 +30,9 @@ on:
     branches:
       - main  # Ou la branche sur laquelle tu veux effectuer le déploiement
 
+permissions:
+  contents: write  # Permet au bot de faire un push
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -72,4 +75,4 @@ jobs:
         run: |
           git add docs/*
           git commit -m "Déploiement automatique de l'application Flutter Web"
-          git push origin main
+          git push https://github-actions:${{ secrets.PAT_TOKEN }}@github.com/Jbriguel/kaliSpot.git HEAD:main
