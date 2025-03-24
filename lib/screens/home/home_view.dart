@@ -86,16 +86,6 @@ class _HomeViewState extends State<HomeView> {
                 color: Colors.black45,
                 child: Column(
                   children: [
-                    //   IconButton(
-                    //     icon: Icon(
-                    //         isMenuExpanded ? Icons.menu_open : Icons.menu,
-                    //         color: Colors.white),
-                    //     onPressed: () {
-                    //       setState(() {
-                    //         isMenuExpanded = !isMenuExpanded;
-                    //       });
-                    //     },
-                    //   ),
                     Expanded(child: DrawerMenu()),
                   ],
                 ),
